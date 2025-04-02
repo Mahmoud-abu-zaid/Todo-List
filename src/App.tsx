@@ -10,9 +10,9 @@ function App() {
 
   const [filter, setFilter] = useState("");
 
-  const completedTasks = tasks.filter((task: { isCompleted: boolean }) => !task.isCompleted);
+  const completedTasks = tasks.filter((task: { isCompleted: boolean }) => task.isCompleted);
 
-  const nonCompletedTasks = tasks.filter((task: { isCompleted: boolean }) => task.isCompleted);
+  const nonCompletedTasks = tasks.filter((task: { isCompleted: boolean }) => !task.isCompleted);
 
   let tasksRenderd = tasks;
 

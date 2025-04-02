@@ -32,7 +32,6 @@ export default function Form({ tasks, setTasks }: TaskFormProps) {
     toast.success("Task Added Success");
   }
 
-
   return (
     <>
       <div className="w-[80%] m-auto">
@@ -43,9 +42,11 @@ export default function Form({ tasks, setTasks }: TaskFormProps) {
           }}
         >
           <div>
-            <label className=" block pt-8 pb-2 text-3xl">Task Title</label>
+            <label className=" block pt-8 pb-2 text-3xl" htmlFor="taskTitle">Task Title</label>
             <input
               type="text"
+              autoFocus
+              id="taskTitle"
               value={formInputs.title}
               onChange={(e) => {
                 setFormInputs({ ...formInputs, title: e.target.value });
@@ -54,19 +55,21 @@ export default function Form({ tasks, setTasks }: TaskFormProps) {
             />
           </div>
           <div>
-            <label className=" block text-3xl pt-4 pb-2">Task Description</label>
+            <label className=" block text-3xl pt-4 pb-2" htmlFor="taskDescription">Task Description</label>
             <textarea
               name=""
-              id=""
+              id="taskDescription"
               className="w-[100%] h-[200px] p-3 text-[20px] border-neutral-500 border-2 rounded-md resize-none"
               value={formInputs.description}
-              onChange={(e) => setFormInputs({ ...formInputs, description: e.target.value })}
+              onChange={(e) => {
+                setFormInputs({ ...formInputs, description: e.target.value });
+              }}
             ></textarea>
           </div>
           <input
             type="submit"
             disabled={formInputs.title.length === 0}
-            value="Add Task"
+            value={"Add Task"}
             className={`w-[100%] mt-2 text-[20px] ${formInputs.title.length === 0 ? "bg-gray-400 cursor-no-drop text-white block w-full p-3 rounded" : "bg-cyan-900 p-3 rounded-md text-white"}`}
           />
         </form>

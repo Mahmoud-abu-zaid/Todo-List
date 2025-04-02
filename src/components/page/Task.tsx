@@ -40,7 +40,7 @@ export default function Task({ task }: { task: Task }) {
 
   return (
     <>
-      <section className={`${task.isCompleted ? "bg-cyan-900" : "bg-green-800"} text-white rounded p-5 m-4`}>
+      <section className={`${task.isCompleted ? "bg-green-800" :"bg-cyan-900" } text-white rounded p-5 m-4`}>
         <div className="flex justify-between items-center ">
           <div className=" gap-7">
             <h3>
