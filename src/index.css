@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 
-:root{
-  --cyan:cyan-900;
+body{
+  background-color: white;
+}
+
+.darkMode body {
+  background-color: rgb(19, 36, 43);
+}
+.darkMode label{
+  color: white;
+}
+.darkMode input ,.darkMode  textarea{
+  color: white;
+  border: 1px solid ;
 }

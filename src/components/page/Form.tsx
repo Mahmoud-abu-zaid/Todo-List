@@ -34,7 +34,7 @@ export default function Form({ tasks, setTasks }: TaskFormProps) {
 
   return (
     <>
-      <div className="w-[80%] m-auto">
+      <div className="w-[80%] m-auto" id="app-root">
         <form
           onSubmit={(e) => {
             e.preventDefault();

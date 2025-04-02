@@ -40,7 +40,7 @@ function App() {
       <TasksContext.Provider value={{ tasks, setTasks }}>
         <Form tasks={tasks} setTasks={setTasks} />
 
-        <div className="flex justify-center items-center gap-9 m-5 p-3 flex-wrap">
+        <div  className="flex justify-center items-center gap-9 m-5 p-3 flex-wrap">
           <button onClick={() => setFilter("all")} className=" cursor-pointer w-[200px] bg-cyan-900 text-white text-[18px] rounded p-2">
             All
           </button>
