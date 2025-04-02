@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Header() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "true";
   });
+  const toastMode = () => {
+    toast.success("Added To Mode");
+  };
   useEffect(() => {
-    const mode= document.documentElement; 
+    const mode = document.documentElement;
     if (darkMode) {
       mode?.classList.add("darkMode");
     } else {
@@ -23,7 +27,12 @@ export default function Header() {
           </h2>
         </div>
         <div>
-          <button onClick={()=>{setDarkMode((e)=>!e)}}>
+          <button
+            onClick={() => {
+              setDarkMode((e) => !e);
+              toastMode();
+            }}
+          >
             <img src="img/white-moonlight-icon-pack-removebg-preview.png" alt="" className="w-[70px] cursor-pointer" />
           </button>
         </div>
